@@ -5,6 +5,8 @@ you may be irritated that you need to run `gulp` in the background
 whenever you're developing your Rails application in order to ensure 
 assets are compiled when you make requests.
 
+![Image](http://s.adamcooke.io/14/TE1xO.png)
+
 This gem will ensure that your gulp command is executed each time a 
 request is made and thus removing the requirement to run it elsewhere.
 
