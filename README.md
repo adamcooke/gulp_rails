@@ -29,7 +29,7 @@ place if needed.
 To get started, just add this gem to your Gemfile.
 
 ```ruby
-gem 'gulp-rails', '~> 1.0'
+gem 'gulp_rails', '~> 1.0'
 ```
 
 If you have followed the guidance above regarding directory structure,
