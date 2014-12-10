@@ -1,15 +1,15 @@
 module GulpRails
   class Middleware
-  
+
     def initialize(app)
       @app = app
     end
-  
+
     def call(env)
       result = @app.call(env)
 
       if GulpRails.options[:enabled] && (GulpRails.options[:development_only] && Rails.env.development?)
-        if result[1]['Content-Type'] =~ /\Atext\/html/
+        if env["HTTP_X_REQUESTED_WITH"] != "XMLHttpRequest" && result[1]['Content-Type'] =~ /\Atext\/html/
           log("[GULP:DEBUG ] Starting the compilation in the folder #{GulpRails.options[:directory]}")
           log("[GULP:DEBUG ]   Running command: #{GulpRails.options[:command]}")
           perform_execution
@@ -18,9 +18,9 @@ module GulpRails
 
       result
     end
-    
+
     private
-    
+
     def log(line)
       Rails.logger.debug(line)
     end
