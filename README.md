@@ -47,9 +47,16 @@ configuration
 
 ```ruby
 # Whether or not compilation should take place
-GulpRails.options[:enabled]   = true
+GulpRails.options[:enabled]         = true
 # The command to run
-GulpRails.options[:command]   = 'gulp'
+GulpRails.options[:command]         = 'gulp'
+# The arguments to pass to the command
+GulpRails.options[:args]            = ''
 # The directory in which your command should be executed
-GulpRails.options[:directory] = Rails.root.join('frontend')
+GulpRails.options[:directory]       = Rails.root.join('frontend')
+# Whether or not run the compilation in development only
+GulpRails.options[:development_only = true
+# Whether or not not raise exceptions when the compilation fails 
+# (this happens when execute returns a exit status different than zero)
+GulpRails.options[:hide_errors]     = false
 ```
